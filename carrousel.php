@@ -8,11 +8,11 @@
 
  
 function eddym_enqueue (){
-    $version_css = filemtime(plugin_dir_path( __FILE__ ) . "style.css");
+    $version_css = filemtime(plugin_dir_path( __FILE__ ) . "sass/style.css");
     $version_js = filemtime(plugin_dir_path(__FILE__) . "js/carrousel.js");
     
     wp_enqueue_style(   'em_plugin_carrousel_css',
-    plugin_dir_url(__FILE__) . "style.css",
+    plugin_dir_url(__FILE__) . "sass/style.css",
     array(),
     $version_css);
     

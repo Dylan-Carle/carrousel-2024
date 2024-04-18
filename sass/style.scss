@@ -1,0 +1,51 @@
+.carrousel{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    border: 3px solid var(--couleur-acceuil);
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+    z-index: 4;
+}
+
+.carrousel__x{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2em;
+    color: white;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    z-index: 5;
+
+}
+.carrousel__x:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.carrousel--ouvrir{
+    transform: scale(1);
+}
+.carrousel__figure{
+    width: 100%;
+    height: 100%;
+}
+.carrousel__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.carrousel__img--visible{
+    opacity: 1;
+}
+.carrousel__radio{
+    z-index: 5;
+}
