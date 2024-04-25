@@ -36,3 +36,8 @@ function  boite_modale(){
 }
 
 add_action('wp_enqueue_scripts', 'eddym_enqueue');
+
+/**
+ * IMPORTANT: wp_header() doit être placé dans le fichier header.php avant la fermeture de la balise <head>
+ * IMPORTANT: wp_footer() doit être placé dans le fichier footer.php avant la fermeture de la balise <body> 
+ */
