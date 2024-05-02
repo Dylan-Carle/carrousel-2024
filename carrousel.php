@@ -26,7 +26,7 @@ function eddym_enqueue (){
 add_shortcode("boite", "boite_modale");
 
 function  boite_modale(){
-    $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
+    $contenu = '
     <div class="carrousel">
     <button class="carrousel__x">X</button>
     <figure class="carrousel__figure"></figure>

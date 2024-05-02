@@ -2,7 +2,7 @@
     position: absolute;
     width: 50%;
     height: 50%;
-    top: 25%;
+    top: 60%;
     left: 25%;
     border: 3px solid var(--couleur-acceuil);
     background-color: rgba(0, 0, 0, 0.2);
@@ -40,7 +40,21 @@
     top: 0;
     left: 0;
     transition: opacity 0.5s ease;
+    box-shadow: inset 10px 10px 200px rgba(0, 0, 0, 0.5);
 }
 .carrousel__radio{
+    z-index: 10;
+}
+.carrousel__form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fleche{
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
     z-index: 10;
 }

@@ -1,7 +1,6 @@
 (function(){
     console.log("debut carrousel");
     let carrousel = document.querySelector('.carrousel');
-    let boutton = document.querySelector('.bouton__ouvrir');
     let carrousel__x = document.querySelector('.carrousel__x');
 
     let galerie = document.querySelector('.galerie');
@@ -11,6 +10,69 @@
     let carrousel_form = document.querySelector('.carrousel__form');
     let compteur = 0;
 
+    let fleche__gauche = document.createElement("button");
+    fleche__gauche.classList.add('fleche');
+
+    let fleche__droite = document.createElement("button");
+    fleche__droite.classList.add('fleche');
+
+    fleche__gauche.innerHTML = "<";
+    fleche__droite.innerHTML = ">";
+
+    fleche__gauche.addEventListener("mouseup", function(){
+        if(compteur == 0){
+            compteur = galerie__img.length - 1;
+        }
+        else{
+            compteur--;
+        }
+        for(const elm of carrousel__figure.querySelectorAll('.carrousel__img')){
+            if(elm.dataset.id == compteur){
+                elm.style.opacity = 1;
+            }
+            else{
+                elm.style.opacity = 0;
+            }
+        }
+        for(const elm of carrousel_form.querySelectorAll('.carrousel__radio')){
+            if(elm.value == compteur){
+                elm.checked = true;
+            }
+            else{
+                elm.checked = false;
+            }
+        }
+        console.log(compteur);
+    });
+
+    fleche__droite.addEventListener("mouseup", function(){
+        if(compteur == galerie__img.length - 1){
+            compteur = 0;
+        }
+        else{
+            compteur++;
+        }
+        for(const elm of carrousel__figure.querySelectorAll('.carrousel__img')){
+            if(elm.dataset.id == compteur){
+                elm.style.opacity = 1;
+            }
+            else{
+                elm.style.opacity = 0;
+            }
+        }
+        for(const elm of carrousel_form.querySelectorAll('.carrousel__radio')){
+            if(elm.value == compteur){
+                elm.checked = true;
+            }
+            else{
+                elm.checked = false;
+            }
+        }
+        console.log(compteur);
+    });
+
+    carrousel.appendChild(fleche__gauche);
+    carrousel.appendChild(fleche__droite);
     for(const elm of galerie__img){
 
         creer_img_carrousel(compteur, elm);
@@ -75,9 +137,6 @@
             }
         });
     }
-    boutton.addEventListener("mousedown", function(){
-        carrousel.classList.add('carrousel--ouvrir');
-    });
 
     carrousel__x.addEventListener("mousedown", function(){
         carrousel.classList.remove('carrousel--ouvrir');
