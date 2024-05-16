@@ -1,14 +1,15 @@
 .carrousel{
-    position: absolute;
+    position: fixed;
     width: 50%;
     height: 50%;
-    top: 60%;
+    top: 25%;
     left: 25%;
     border: 3px solid var(--couleur-acceuil);
     background-color: rgba(0, 0, 0, 0.2);
     transform: scale(0);
     transition: transform 0.5s ease;
     z-index: 4;
+    box-shadow: 0px 0px 100px var(--couleur-acceuil);
 }
 .carrousel__x{
     position: absolute;
@@ -57,4 +58,12 @@
     background-color: rgba(0, 0, 0, 0);
     border: none;
     z-index: 10;
+}
+.conteneur__fleche{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
