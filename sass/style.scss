@@ -1,9 +1,9 @@
 .carrousel{
     position: fixed;
-    width: 50%;
-    height: 50%;
-    top: 25%;
-    left: 25%;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
     border: 3px solid var(--couleur-acceuil);
     background-color: rgba(0, 0, 0, 0.2);
     transform: scale(0);
@@ -58,6 +58,12 @@
     background-color: rgba(0, 0, 0, 0);
     border: none;
     z-index: 10;
+    transition: color 0.2s ease, filter 0.2s ease;
+
+    &:hover{
+        color: var(--couleur-acceuil);
+        filter: drop-shadow(0px 0px 10px var(--couleur-acceuil));
+    }
 }
 .conteneur__fleche{
     display: flex;
