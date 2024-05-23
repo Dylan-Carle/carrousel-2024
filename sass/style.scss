@@ -1,12 +1,13 @@
 .carrousel{
     position: fixed;
-    width: 80%;
+    width: 60%;
     height: 80%;
     top: 10%;
-    left: 10%;
+    left: 20%;
     border: 3px solid var(--couleur-acceuil);
     background-color: rgba(0, 0, 0, 0.2);
-    transform: scale(0);
+    transform-origin: center top;
+    transform: rotate3d(1, 0, 0, -90deg);
     transition: transform 0.5s ease;
     z-index: 4;
     box-shadow: 0px 0px 100px var(--couleur-acceuil);
@@ -27,7 +28,7 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 .carrousel--ouvrir{
-    transform: scale(1);
+    transform: rotate3d(1, 0, 0, 0deg);
 }
 .carrousel__figure{
     width: 100%;
@@ -41,7 +42,6 @@
     top: 0;
     left: 0;
     transition: opacity 0.5s ease;
-    box-shadow: inset 10px 10px 200px rgba(0, 0, 0, 0.5);
 }
 .carrousel__radio{
     z-index: 10;
@@ -58,6 +58,7 @@
     background-color: rgba(0, 0, 0, 0);
     border: none;
     z-index: 10;
+    padding: 0 1rem 0 1rem;
     transition: color 0.2s ease, filter 0.2s ease;
 
     &:hover{
@@ -72,4 +73,14 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+}
+.galerie img{
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover{
+        opacity: 1;
+        box-shadow: 0px 0px 20px var(--couleur-acceuil);
+    }
 }
