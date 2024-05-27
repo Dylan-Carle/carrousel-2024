@@ -8,11 +8,11 @@
 
  
 function eddym_enqueue (){
-    $version_css = filemtime(plugin_dir_path( __FILE__ ) . "style.css");
+    $version_css = filemtime(plugin_dir_path( __FILE__ ) . "sass/style.css");
     $version_js = filemtime(plugin_dir_path(__FILE__) . "js/carrousel.js");
     
     wp_enqueue_style(   'em_plugin_carrousel_css',
-    plugin_dir_url(__FILE__) . "style.css",
+    plugin_dir_url(__FILE__) . "sass/style.css",
     array(),
     $version_css);
     
@@ -26,7 +26,7 @@ function eddym_enqueue (){
 add_shortcode("boite", "boite_modale");
 
 function  boite_modale(){
-    $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
+    $contenu = '
     <div class="carrousel">
     <button class="carrousel__x">X</button>
     <figure class="carrousel__figure"></figure>
@@ -36,3 +36,8 @@ function  boite_modale(){
 }
 
 add_action('wp_enqueue_scripts', 'eddym_enqueue');
+
+/**
+ * IMPORTANT: wp_header() doit être placé dans le fichier header.php avant la fermeture de la balise <head>
+ * IMPORTANT: wp_footer() doit être placé dans le fichier footer.php avant la fermeture de la balise <body> 
+ */
